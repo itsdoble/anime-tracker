@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/anime-tracker/static/css/main.073c9b0a.css",
+    "main.js": "/anime-tracker/static/js/main.bb5c54f9.js",
+    "static/js/787.90594000.chunk.js": "/anime-tracker/static/js/787.90594000.chunk.js",
+    "static/media/logo.svg": "/anime-tracker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/anime-tracker/index.html",
+    "main.073c9b0a.css.map": "/anime-tracker/static/css/main.073c9b0a.css.map",
+    "main.bb5c54f9.js.map": "/anime-tracker/static/js/main.bb5c54f9.js.map",
+    "787.90594000.chunk.js.map": "/anime-tracker/static/js/787.90594000.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.bb5c54f9.js"
+  ]
+}
