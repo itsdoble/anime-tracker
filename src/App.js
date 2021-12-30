@@ -13,12 +13,15 @@ const App = () => {
   const [pic, setPic] = useState(
     "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
   );
+  const [trackedA, setTracked] = useState({});
 
   let contextOptions = {
     name: name,
     setName: setName,
     pic: pic,
     setPic: setPic,
+    trackedA: trackedA,
+    setTrack: setTracked,
   };
 
   useEffect(() => {
@@ -28,13 +31,16 @@ const App = () => {
     if (window.localStorage.getItem("pic")) {
       setPic(window.localStorage.getItem("pic"));
     }
+    if (window.localStorage.getItem("tracked")) {
+      setTracked(JSON.parse(window.localStorage.getItem("tracked")));
+    }
   }, []);
   return (
     <Context.Provider value={contextOptions}>
       <div className="w-screen min-h-screen ">
         <Header />
         <div className="w-screen h-[3rem]"></div>
-        <div className="w-screen h-[calc(100vh_-_7rem)] bg-pink-50 relative">
+        <div className="w-screen min-h-[calc(100vh_-_7rem)] bg-pink-50 relative">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/anime" element={<Anime />} />
@@ -42,6 +48,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
+        <div className="w-screen h-16"></div>
         <Menu />
       </div>
     </Context.Provider>
