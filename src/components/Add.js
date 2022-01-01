@@ -27,7 +27,7 @@ const Add = () => {
         <i className="absolute top-2 left-2 fas fa-search w-[5%] "></i>
         <input
           type="text"
-          className="w-3/4 h-7 rounded-l-sm indent-8"
+          className="outline-pink-500 w-3/4 h-7 rounded-l-sm indent-8"
           value={searchTerm}
           onChange={setSearch}
           ref={searchValue}
@@ -45,7 +45,7 @@ const Add = () => {
         </button>
       </form>
 
-      <div className="w-full grid grid-cols-2 gap-2 pb-2">
+      <div className="w-full grid grid-cols-2 gap-2 pb-2 mt-2">
         {data.length !== 0
           ? data.results
               .filter((e, i) => i <= 15)

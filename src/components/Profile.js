@@ -30,8 +30,8 @@ const Profile = () => {
       .catch((e) => console.log(e.message));
   };
   return (
-    <>
-      <form className="w-full h-full flex flex-col justify-center items-center pb-10">
+    <div className="w-full h-[] bg-red-500">
+      <form className="w-full h-full flex flex-col justify-center items-center">
         <label htmlFor="pic">
           <img
             className="min-h-[12rem] h-[12rem] aspect-square object-cover rounded-full m-auto outline outline-pink-500 "
@@ -75,7 +75,7 @@ const Profile = () => {
           </li>
         </ol>
       </div>
-    </>
+    </div>
   );
 };
 

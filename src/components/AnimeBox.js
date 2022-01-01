@@ -28,7 +28,7 @@ const AnimeBox = (props) => {
     window.localStorage.setItem("tracked", JSON.stringify(tracked));
   };
   return (
-    <div className="w-full h-70 bg-white flex flex-col justify-center items-center outline outline-1 outline-pink-500 p-2">
+    <div className="w-full h-70 bg-white flex flex-col justify-center items-center outline outline-1 outline-pink-500 p-2 rounded-sm">
       <img
         src={props.image_url}
         alt="anime pic"
