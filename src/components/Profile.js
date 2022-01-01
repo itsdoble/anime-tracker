@@ -13,7 +13,7 @@ const Profile = () => {
     window.location.reload();
   };
   const updatePicture = (e) => {
-    ctx.setPic("https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif");
+    ctx.setPic(process.env.PUBLIC_URL + "/media/loading.gif");
     const formdata = new FormData();
     formdata.append("file", e.target.files[0]);
     formdata.append("upload_preset", "jo8zfyrw");
@@ -30,8 +30,8 @@ const Profile = () => {
       .catch((e) => console.log(e.message));
   };
   return (
-    <div className="w-full h-[] bg-red-500">
-      <form className="w-full h-full flex flex-col justify-center items-center">
+    <div className="w-full h-[calc(100vh_-_7rem)]">
+      <form className="w-full h-full flex flex-col justify-center items-center pb-32">
         <label htmlFor="pic">
           <img
             className="min-h-[12rem] h-[12rem] aspect-square object-cover rounded-full m-auto outline outline-pink-500 "

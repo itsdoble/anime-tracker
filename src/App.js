@@ -29,11 +29,11 @@ const App = () => {
   useEffect(() => {
     //fix keyboard shifting viewport size on mobile
 
-    let viewHeight = window.innerHeight;
-    let viewWidth = window.innerWidth;
+    // let viewHeight = window.innerHeight;
+    // let viewWidth = window.innerWidth;
     // for build
-    // let viewHeight = window.visualViewport.height;
-    // let viewWidth = window.visualViewport.width;
+    let viewHeight = window.visualViewport.height;
+    let viewWidth = window.visualViewport.width;
     // for dev
     let dimensions = "width=" + viewWidth + "px, height=" + viewHeight + "px";
     setViewP(dimensions);
