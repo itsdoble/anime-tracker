@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MetaTags from "react-meta-tags";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import { Routes, Route } from "react-router-dom";
@@ -14,6 +15,7 @@ const App = () => {
     "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
   );
   const [trackedA, setTracked] = useState({});
+  const [viewP, setViewP] = useState("width=device-width");
 
   let contextOptions = {
     name: name,
@@ -25,6 +27,17 @@ const App = () => {
   };
 
   useEffect(() => {
+    //fix keyboard shifting viewport size on mobile
+
+    let viewHeight = window.innerHeight;
+    let viewWidth = window.innerWidth;
+    // for build
+    // let viewHeight = window.visualViewport.height;
+    // let viewWidth = window.visualViewport.width;
+    // for dev
+    let dimensions = "width=" + viewWidth + "px, height=" + viewHeight + "px";
+    setViewP(dimensions);
+    console.log(dimensions);
     if (window.localStorage.getItem("name")) {
       setName(window.localStorage.getItem("name"));
     }
@@ -37,6 +50,9 @@ const App = () => {
   }, []);
   return (
     <Context.Provider value={contextOptions}>
+      <MetaTags>
+        <meta name="viewport" content={viewP + ", initial-scale=1"} />
+      </MetaTags>
       <div className="w-screen min-h-screen ">
         <Header />
         <div className="w-screen h-[3rem]"></div>
