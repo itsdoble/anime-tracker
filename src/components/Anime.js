@@ -10,7 +10,6 @@ const Anime = () => {
   for (const prop in animeObj) {
     animeArr.push(animeObj[prop]);
   }
-  console.log(animeArr);
 
   return (
     <div className="w-full min-h-full pt-4 flex flex-col justify-center items-center gap-4">

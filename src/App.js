@@ -44,7 +44,7 @@ const App = () => {
   return (
     <Context.Provider value={contextOptions}>
       <MetaTags>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta
           name="viewport"
           content={"width=device-width,height=" + viewH + ", initial-scale=0.9"}
