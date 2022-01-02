@@ -42,7 +42,7 @@ const Profile = () => {
       <form className="w-full h-full flex flex-col justify-center items-center pb-32">
         <label htmlFor="pic">
           <img
-            className="min-h-[10rem] h-[10rem] aspect-square object-cover rounded-full m-auto outline outline-pink-500 "
+            className="min-h-[10rem] h-[10rem] aspect-square object-cover rounded-[50%] m-auto outline outline-pink-500 "
             src={ctx.pic}
             alt="profile pic"
           />
@@ -70,7 +70,7 @@ const Profile = () => {
           Clear Data
         </button>
       </form>
-      <div className="absolute bottom-2 left-[calc(100vw_-_97.5%)] w-[95%] p-2 bg-pink-100 outline outline-1 rounded-md">
+      <div className="absolute bottom-2 left-[calc(100vw_-_97.5%)] w-[95%] p-2 bg-pink-100 outline outline-1 rounded-lg">
         <p onClick={hideShowTips} className="text-center">
           <i className={"mr-1 fas " + tips[2]}></i>
           {tips[1]} tips
