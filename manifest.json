@@ -5,8 +5,8 @@
   "background_color": "#fdf2f8",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/anime-tracker",
+  "start_url": "/anime-tracker",
   "icons": [
     {
       "src": "logo16.png",
