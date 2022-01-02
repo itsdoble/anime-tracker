@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Context from "../context";
 
 const Profile = () => {
+  const [tips, setTips] = useState("absolute");
   const ctx = useContext(Context);
   const changeName = (e) => {
     ctx.setName(e.target.value);
@@ -28,6 +29,11 @@ const Profile = () => {
         window.localStorage.setItem("pic", data.secure_url);
       })
       .catch((e) => console.log(e.message));
+  };
+  const hideTips = () => {
+    console.log("hello");
+    setTips("hidden");
+    console.log("hello");
   };
   return (
     <div className="w-full h-[calc(100vh_-_7rem)]">
@@ -62,7 +68,13 @@ const Profile = () => {
           Clear Data
         </button>
       </form>
-      <div className="absolute bottom-2 left-[calc(100vw_-_97.5%)] w-[95%] p-2 bg-pink-100 outline outline-1 rounded-lg">
+      <div
+        className={
+          tips +
+          " bottom-2 left-[calc(100vw_-_97.5%)] w-[95%] p-2 bg-pink-100 outline outline-1 rounded-lg"
+        }
+        onClick={hideTips}
+      >
         <h2>Tips:</h2>
         <ol className="list-outside list-decimal">
           <li className="ml-6">Click on the picture/name to change them.</li>

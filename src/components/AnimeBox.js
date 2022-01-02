@@ -12,15 +12,19 @@ const AnimeBox = (props) => {
     }
     if (props.episodes) {
       tracked[props.title] = {
+        title: props.title,
         episodes: props.episodes,
         type: "anime",
         img: props.image_url,
+        completed: 0,
       };
     } else {
       tracked[props.title] = {
+        title: props.title,
         chapters: props.chapters,
         type: "manga",
         img: props.image_url,
+        completed: 0,
       };
     }
 
