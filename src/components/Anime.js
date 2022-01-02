@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Context from "../context";
 import AnimeListItem from "./AnimeListItem";
+import NoData from "./NoData";
 const Anime = () => {
   const [dummy, setDummy] = useState(1);
   let animeArr = [];
@@ -16,17 +17,21 @@ const Anime = () => {
       <div className="w-[95%] border-b-2 border-pink-600 text-xl text-pink-500 font-semibold">
         {ctx.name}'s Anime List
       </div>
-      {animeArr.map((entry, index) => {
-        return (
-          <AnimeListItem
-            key={index}
-            id={index}
-            data={entry}
-            dummy={dummy}
-            setDummy={setDummy}
-          />
-        );
-      })}
+      {animeArr.length !== 0 ? (
+        animeArr.map((entry, index) => {
+          return (
+            <AnimeListItem
+              key={index}
+              id={index}
+              data={entry}
+              dummy={dummy}
+              setDummy={setDummy}
+            />
+          );
+        })
+      ) : (
+        <NoData />
+      )}
     </div>
   );
 };

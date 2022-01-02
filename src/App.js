@@ -30,9 +30,6 @@ const App = () => {
     //fix keyboard shifting viewport size on mobile
     let viewHeight = window.outerHeight + "px";
     setViewH(viewHeight);
-    // for build
-    // let viewHeight = window.visualViewport.height;
-    // for dev
 
     if (window.localStorage.getItem("name")) {
       setName(window.localStorage.getItem("name"));
@@ -47,11 +44,12 @@ const App = () => {
   return (
     <Context.Provider value={contextOptions}>
       <MetaTags>
+        <meta charset="utf-8" />
         <meta
           name="viewport"
           content={"width=device-width,height=" + viewH + ", initial-scale=0.9"}
         />
-        {/* <meta name="mobile-web-app-capable" content="yes"></meta> */}
+        <meta name="mobile-web-app-capable" content="yes"></meta>
         <link rel="manifest" href={process.env.PUBLIC_URL + "/manifest.json"} />
       </MetaTags>
       <div className="w-screen h-full">
