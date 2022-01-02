@@ -15,6 +15,7 @@ const App = () => {
     "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
   );
   const [trackedA, setTracked] = useState({});
+  const [viewH, setViewH] = useState("device-height");
 
   let contextOptions = {
     name: name,
@@ -27,8 +28,8 @@ const App = () => {
 
   useEffect(() => {
     //fix keyboard shifting viewport size on mobile
-    console.log(window.devicePixelRatio);
-    // let viewHeight = window.innerHeight;
+    let viewHeight = window.outerHeight + "px";
+    setViewH(viewHeight);
     // for build
     // let viewHeight = window.visualViewport.height;
     // for dev
@@ -45,10 +46,17 @@ const App = () => {
   }, []);
   return (
     <Context.Provider value={contextOptions}>
-      <div className="w-screen min-h-screen ">
+      <MetaTags>
+        <meta
+          name="viewport"
+          content={"width=device-width,height=" + viewH + ", initial-scale=0.9"}
+        />
+        {/* <meta name="mobile-web-app-capable" content="yes"></meta> */}
+        <link rel="manifest" href={process.env.PUBLIC_URL + "/manifest.json"} />
+      </MetaTags>
+      <div className="w-screen h-full">
         <Header />
-        <div className="w-screen h-[3rem]"></div>
-        <div className="w-screen min-h-[calc(100vh_-_7rem)] bg-pink-50 relative">
+        <div className="w-screen h-full bg-pink-50 relative pt-[3rem] pb-[4rem]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/anime" element={<Anime />} />
@@ -56,7 +64,6 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
-        <div className="w-screen h-16"></div>
         <Menu />
       </div>
     </Context.Provider>

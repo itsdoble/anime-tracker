@@ -6,7 +6,7 @@ const Menu = () => {
   const { pathname } = location;
   const splitLocation = pathname.split("/");
   return (
-    <div className="menubar w-screen h-16 fixed bottom-0 left-0 bg-pink-200 grid grid-cols-3 place-items-center">
+    <div className="menubar w-full h-16 fixed bottom-0 left-0 bg-pink-200 grid grid-cols-3 place-items-center">
       <Link to="/anime">
         <button
           className={

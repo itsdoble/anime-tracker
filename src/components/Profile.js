@@ -31,16 +31,17 @@ const Profile = () => {
       .catch((e) => console.log(e.message));
   };
   const hideTips = () => {
+    alert(window.innerHeight);
     console.log("hello");
     setTips("hidden");
     console.log("hello");
   };
   return (
-    <div className="w-full h-[calc(100vh_-_7rem)]">
+    <div className="w-full h-full relative">
       <form className="w-full h-full flex flex-col justify-center items-center pb-32">
         <label htmlFor="pic">
           <img
-            className="min-h-[12rem] h-[12rem] aspect-square object-cover rounded-full m-auto outline outline-pink-500 "
+            className="min-h-[10rem] h-[10rem] aspect-square object-cover rounded-full m-auto outline outline-pink-500 "
             src={ctx.pic}
             alt="profile pic"
           />
